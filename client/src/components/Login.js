@@ -1,18 +1,18 @@
 import React from 'react';
-class App extends React.Component{
+class Login extends React.Component{
   constructor(){
     super();
     this.state = {
-
+        
     }
   }
 
   render(){
     return(
       <div>
-        <p>App</p>
+        <p>Login</p>
       </div>
     )
   }
 }
-export default App;
+export default Login;
