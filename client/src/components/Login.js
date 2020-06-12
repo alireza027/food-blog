@@ -65,6 +65,7 @@ class Login extends React.Component{
                 </div>
 
                 <Link to="/" className="btn btn-block mt-4" style={{backgroundColor:"#f0932b",color:"#fff"}}>Login</Link>
+                <Link to="/register" className="btn btn-link">You Have A Account? Go To Register</Link>
             </div>
             {/* end of Form */}
             </>
