@@ -64,7 +64,7 @@ class Login extends React.Component{
                     <input type="password" placeholder="Please Enter Email" className="form-control" style={{border:"1px solid #f00",boxShadow:"0 0 1px 0px #f00"}}/>
                 </div>
 
-                <button className="btn btn-block mt-4" style={{backgroundColor:"#f0932b",color:"#fff"}}>Login</button>
+                <Link to="/" className="btn btn-block mt-4" style={{backgroundColor:"#f0932b",color:"#fff"}}>Login</Link>
             </div>
             {/* end of Form */}
             </>
