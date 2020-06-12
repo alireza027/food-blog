@@ -29,12 +29,6 @@ class Page_404 extends React.Component{
                                             <NavLink to="/archive" exact className="nav-link">Archive</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to="/contact" exact className="nav-link">Contact</NavLink>
-                                        </li>
-                                        <li className="nav-item">
-                                            <NavLink to="/static" exact className="nav-link">Static</NavLink>
-                                        </li>
-                                        <li className="nav-item">
                                             <NavLink to="/login" exact className="nav-link">Login</NavLink>
                                         </li>
                                         <li className="nav-item">
