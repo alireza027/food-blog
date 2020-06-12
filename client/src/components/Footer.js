@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link,NavLink} from 'react-router-dom';
+import {Link,NavLink,withRouter} from 'react-router-dom';
 class Footer extends React.Component{
   constructor(){
     super();
@@ -7,6 +7,14 @@ class Footer extends React.Component{
         
     }
   }
+
+  activeList = (listContent)=>{
+    if(this.props.match.path === `/${listContent}`){
+        return "active";
+    }else {
+        return ""
+    }
+}
 
   render(){
     return(
@@ -61,18 +69,18 @@ class Footer extends React.Component{
                                 {/* Menu Area Start */}
                                 <div className="collapse navbar-collapse justify-content-center" id="yummyfood-footer-nav">
                                     <ul className="navbar-nav">
-                                    <li className="nav-item active">
-                                      <NavLink to="/" exact className="nav-link">Home <span className="sr-only">(current)</span></NavLink>
-                                    </li>
-                                    <li className="nav-item">
-                                        <NavLink to="/archive" exact className="nav-link">Archive</NavLink>
-                                    </li>
-                                    <li className="nav-item">
-                                        <NavLink to="/login" exact className="nav-link">Login</NavLink>
-                                    </li>
-                                    <li className="nav-item">
-                                        <NavLink to="/register" exact className="nav-link">Register</NavLink>
-                                    </li>
+                                        <li className={`nav-item ${this.activeList('')}`}>
+                                        <NavLink to="/" exact className="nav-link">Home <span className="sr-only">(current)</span></NavLink>
+                                        </li>
+                                        <li className={`nav-item ${this.activeList('archive')}`}>
+                                            <NavLink to="/archive" exact className="nav-link">Archive</NavLink>
+                                        </li>
+                                        <li className={`nav-item ${this.activeList('login')}`} >
+                                            <NavLink to="/login" exact className="nav-link">Login</NavLink>
+                                        </li>
+                                        <li className={`nav-item ${this.activeList('register')}`}>
+                                            <NavLink to="/register" exact className="nav-link">Register</NavLink>
+                                        </li>
                                     </ul>
                                 </div>
                             </nav>
@@ -96,4 +104,4 @@ class Footer extends React.Component{
     )
   }
 }
-export default Footer;
+export default withRouter(Footer);
