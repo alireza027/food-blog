@@ -5,7 +5,7 @@ class Register extends React.Component{
         return(
             <>
             <header className="header_area">
-                    <div className="">
+                    <div className="container">
                     <div className="row">
                         <div className="col-12">
                             <nav className="navbar navbar-expand-lg">
