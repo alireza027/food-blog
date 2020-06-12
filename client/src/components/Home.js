@@ -112,7 +112,7 @@ class Home extends React.Component{
                     <div className="single_catagory wow fadeInUp" data-wow-delay=".3s">
                         <img src="/assets/img/catagory-img/1.jpg" alt="" /> 
                         <div className="catagory-title">
-                            <Link to="/">
+                            <Link to="/archive-food">
                                 <h5>Food</h5>
                             </Link>
                         </div>
@@ -122,7 +122,7 @@ class Home extends React.Component{
                     <div className="single_catagory wow fadeInUp" data-wow-delay=".6s">
                         <img src="/assets/img/catagory-img/2.jpg" alt="" />
                         <div className="catagory-title">
-                            <Link to="/">
+                            <Link to="/archive-cooking">
                                 <h5>Cooking</h5>
                             </Link>
                         </div>
@@ -132,7 +132,7 @@ class Home extends React.Component{
                     <div className="single_catagory wow fadeInUp" data-wow-delay=".9s">
                         <img src="/assets/img/catagory-img/3.jpg" alt="" />
                         <div className="catagory-title">
-                            <Link to="/">
+                            <Link to="/archive-life-style">
                                 <h5>Life Style</h5>
                             </Link>
                         </div>
