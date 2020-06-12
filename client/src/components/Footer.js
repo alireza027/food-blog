@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link,NavLink} from 'react-router-dom';
 class Footer extends React.Component{
   constructor(){
     super();
@@ -61,24 +61,18 @@ class Footer extends React.Component{
                                 {/* Menu Area Start */}
                                 <div className="collapse navbar-collapse justify-content-center" id="yummyfood-footer-nav">
                                     <ul className="navbar-nav">
-                                        <li className="nav-item active">
-                                            <Link to="/" className="nav-link">Home <span className="sr-only">(current)</span></Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to="/" className="nav-link">Features</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to="/" className="nav-link">Categories</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to="/" className="nav-link">Archive</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to="/" className="nav-link" >About</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to="/" className="nav-link" >Contact</Link>
-                                        </li>
+                                    <li className="nav-item active">
+                                      <NavLink to="/" exact className="nav-link">Home <span className="sr-only">(current)</span></NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink to="/archive" exact className="nav-link">Archive</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink to="/login" exact className="nav-link">Login</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink to="/register" exact className="nav-link">Register</NavLink>
+                                    </li>
                                     </ul>
                                 </div>
                             </nav>
