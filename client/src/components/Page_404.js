@@ -1,7 +1,5 @@
 import React from 'react';
 import {Link,NavLink} from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
 class Page_404 extends React.Component{
     render(){
         return(
