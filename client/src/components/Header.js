@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link,NavLink} from 'react-router-dom';
+import {Link,NavLink,withRouter} from 'react-router-dom';
 class Header extends React.Component{
   constructor(){
     super();
@@ -7,6 +7,15 @@ class Header extends React.Component{
         
     }
   }
+
+  activeList = (listContent)=>{
+      if(this.props.match.path === `/${listContent}`){
+          return "active";
+      }else {
+          return ""
+      }
+  }
+
 
   render(){
     return(
@@ -58,16 +67,16 @@ class Header extends React.Component{
                           {/* <!-- Menu Area Start --> */}
                           <div className="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
                               <ul className="navbar-nav" id="yummy-nav">
-                                  <li className="nav-item active">
+                                  <li className={`nav-item ${this.activeList('')}`}>
                                       <NavLink to="/" exact className="nav-link">Home <span className="sr-only">(current)</span></NavLink>
                                   </li>
-                                  <li className="nav-item">
+                                  <li className={`nav-item ${this.activeList('archive')}`}>
                                       <NavLink to="/archive" exact className="nav-link">Archive</NavLink>
                                   </li>
-                                  <li className="nav-item">
+                                  <li className={`nav-item ${this.activeList('login')}`} >
                                       <NavLink to="/login" exact className="nav-link">Login</NavLink>
                                   </li>
-                                  <li className="nav-item">
+                                  <li className={`nav-item ${this.activeList('register')}`}>
                                       <NavLink to="/register" exact className="nav-link">Register</NavLink>
                                   </li>
                               </ul>
@@ -82,4 +91,4 @@ class Header extends React.Component{
     )
   }
 }
-export default Header;
+export default withRouter(Header);
