@@ -56,12 +56,12 @@ class Login extends React.Component{
             <div className="container mx-auto my-5">
                 <div className="form-group mb-4">
                     <label>Email</label>
-                    <input type="text" placeholder="Please Enter Email" className="form-control" style={{border:"1px solid #f00",boxShadow:"0 0 1px 0px #f00"}}/>
+                    <input type="email" placeholder="Please Enter Email" className="form-control" style={{border:"1px solid #f00",boxShadow:"0 0 1px 0px #f00"}}/>
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" placeholder="Please Enter Email" className="form-control" style={{border:"1px solid #f00",boxShadow:"0 0 1px 0px #f00"}}/>
+                    <input type="password" placeholder="Please Enter Password" className="form-control" style={{border:"1px solid #f00",boxShadow:"0 0 1px 0px #f00"}}/>
                 </div>
 
                 <Link to="/" className="btn btn-block mt-4" style={{backgroundColor:"#f0932b",color:"#fff"}}>Login</Link>
