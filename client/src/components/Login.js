@@ -13,13 +13,13 @@ class Login extends React.Component{
                                 {/* <!-- Menu Area Start --> */}
                                 <div className="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
                                     <ul className="navbar-nav" id="yummy-nav">
-                                        <li className="nav-item active">
+                                        <li className="nav-item">
                                             <NavLink to="/" exact className="nav-link">Home <span className="sr-only">(current)</span></NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <NavLink to="/archive" exact className="nav-link">Archive</NavLink>
                                         </li>
-                                        <li className="nav-item">
+                                        <li className="nav-item active">
                                             <NavLink to="/login" exact className="nav-link">Login</NavLink>
                                         </li>
                                         <li className="nav-item">
