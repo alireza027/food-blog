@@ -58,11 +58,11 @@ class Single extends React.Component{
                         {/* <!-- Single Post Share Info --> */}
                         <div className="col-2 col-sm-1">
                             <div className="single-post-share-info mt-100">
-                                <a href="#" className="facebook"><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#" className="twitter"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#" className="googleplus"><i className="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <a href="#" className="instagram"><i className="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="#" className="pinterest"><i className="fa fa-pinterest" aria-hidden="true"></i></a>
+                                <Link to="/" className="facebook"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
+                                <Link to="/" className="twitter"><i className="fa fa-twitter" aria-hidden="true"></i></Link>
+                                <Link to="/" className="googleplus"><i className="fa fa-google-plus" aria-hidden="true"></i></Link>
+                                <Link to="/" className="instagram"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
+                                <Link to="/" className="pinterest"><i className="fa fa-pinterest" aria-hidden="true"></i></Link>
                             </div>
                         </div>
 
@@ -79,32 +79,32 @@ class Single extends React.Component{
                                         <div className="post-author-date-area d-flex">
                                             {/* <!-- Post Author --> */}
                                             <div className="post-author">
-                                                <a href="#">By Marian</a>
+                                                <Link to="/">By Marian</Link>
                                             </div>
                                             {/* <!-- Post Date --> */}
                                             <div className="post-date">
-                                                <a href="#">May 19, 2017</a>
+                                                <Link to="/">May 19, 2017</Link>
                                             </div>
                                         </div>
                                         {/* <!-- Post Comment & Share Area --> */}
                                         <div className="post-comment-share-area d-flex">
                                             {/* <!-- Post Favourite --> */}
                                             <div className="post-favourite">
-                                                <a href="#"><i className="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                                <Link to="/"><i className="fa fa-heart-o" aria-hidden="true"></i> 10</Link>
                                             </div>
                                             {/* <!-- Post Comments --> */}
                                             <div className="post-comments">
-                                                <a href="#"><i className="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                                <Link to="/"><i className="fa fa-comment-o" aria-hidden="true"></i> 12</Link>
                                             </div>
                                             {/* <!-- Post Share --> */}
                                             <div className="post-share">
-                                                <a href="#"><i className="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                <Link to="/"><i className="fa fa-share-alt" aria-hidden="true"></i></Link>
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+                                    <Link to="/">
                                         <h2 className="post-headline">Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!</h2>
-                                    </a>
+                                    </Link>
                                     <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea. Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 
                                     <blockquote className="yummy-blockquote mt-30 mb-30">
@@ -141,9 +141,9 @@ class Single extends React.Component{
 
                             {/* <!-- Tags Area --> */}
                             <div className="tags-area">
-                                <a href="#">Multipurpose</a>
-                                <a href="#">Design</a>
-                                <a href="#">Ideas</a>
+                                <Link to="/">Multipurpose</Link>
+                                <Link to="/">Design</Link>
+                                <Link to="/">Ideas</Link>
                             </div>
 
                             {/* <!-- Related Post Area --> */}
@@ -163,17 +163,17 @@ class Single extends React.Component{
                                                 <div className="post-author-date-area d-flex">
                                                     {/* <!-- Post Author --> */}
                                                     <div className="post-author">
-                                                        <a href="#">By Marian</a>
+                                                        <Link to="/">By Marian</Link>
                                                     </div>
                                                     {/* <!-- Post Date --> */}
                                                     <div className="post-date">
-                                                        <a href="#">May 19, 2017</a>
+                                                        <Link to="/">May 19, 2017</Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="#">
+                                            <Link to="/">
                                                 <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     {/* <!-- Single Related Post--> */}
@@ -188,17 +188,17 @@ class Single extends React.Component{
                                                 <div className="post-author-date-area d-flex">
                                                     {/* <!-- Post Author --> */}
                                                     <div className="post-author">
-                                                        <a href="#">By Marian</a>
+                                                        <Link to="/">By Marian</Link>
                                                     </div>
                                                     {/* <!-- Post Date --> */}
                                                     <div className="post-date">
-                                                        <a href="#">May 19, 2017</a>
+                                                        <Link to="/">May 19, 2017</Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="#">
+                                            <Link to="/">
                                                 <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     {/* <!-- Single Related Post--> */}
@@ -213,17 +213,17 @@ class Single extends React.Component{
                                                 <div className="post-author-date-area d-flex">
                                                     {/* <!-- Post Author --> */}
                                                     <div className="post-author">
-                                                        <a href="#">By Marian</a>
+                                                        <Link to="/">By Marian</Link>
                                                     </div>
                                                     {/* <!-- Post Date --> */}
                                                     <div className="post-date">
-                                                        <a href="#">May 19, 2017</a>
+                                                        <Link to="/">May 19, 2017</Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="#">
+                                            <Link to="/">
                                                 <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     {/* <!-- Single Related Post--> */}
@@ -238,17 +238,17 @@ class Single extends React.Component{
                                                 <div className="post-author-date-area d-flex">
                                                     {/* <!-- Post Author --> */}
                                                     <div className="post-author">
-                                                        <a href="#">By Marian</a>
+                                                        <Link to="/">By Marian</Link>
                                                     </div>
                                                     {/* <!-- Post Date --> */}
                                                     <div className="post-date">
-                                                        <a href="#">May 19, 2017</a>
+                                                        <Link to="/">May 19, 2017</Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="#">
+                                            <Link to="/">
                                                 <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -270,8 +270,8 @@ class Single extends React.Component{
                                                 <span className="comment-date text-muted">27 Aug 2018</span>
                                                 <h5>Brandon Kelley</h5>
                                                 <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
-                                                <a href="#">Like</a>
-                                                <a className="active" href="#">Reply</a>
+                                                <Link to="/">Like</Link>
+                                                <Link to="/" className="active">Reply</Link>
                                             </div>
                                         </div>
                                         <ol className="children">
@@ -286,8 +286,8 @@ class Single extends React.Component{
                                                         <span className="comment-date text-muted">27 Aug 2018</span>
                                                         <h5>Brandon Kelley</h5>
                                                         <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
-                                                        <a href="#">Like</a>
-                                                        <a className="active" href="#">Reply</a>
+                                                        <Link to="/">Like</Link>
+                                                        <Link to="/" className="active">Reply</Link>
                                                     </div>
                                                 </div>
                                             </li>
@@ -304,8 +304,8 @@ class Single extends React.Component{
                                                 <span className="comment-date text-muted">27 Aug 2018</span>
                                                 <h5>Brandon Kelley</h5>
                                                 <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
-                                                <a href="#">Like</a>
-                                                <a className="active" href="#">Reply</a>
+                                                <Link to="/">Like</Link>
+                                                <Link to="/" className="active">Reply</Link>
                                             </div>
                                         </div>
                                     </li>
@@ -336,12 +336,12 @@ class Single extends React.Component{
                                 <h6>Subscribe &amp; Follow</h6>
                             </div>
                             <div className="subscribe-link">
-                                <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-google" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-vimeo" aria-hidden="true"></i></a>
+                                <Link to="/"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
+                                <Link to="/"><i className="fa fa-twitter" aria-hidden="true"></i></Link>
+                                <Link to="/"><i className="fa fa-google" aria-hidden="true"></i></Link>
+                                <Link to="/"><i className="fa fa-linkedin-square" aria-hidden="true"></i></Link>
+                                <Link to="/"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
+                                <Link to="/"><i className="fa fa-vimeo" aria-hidden="true"></i></Link>
                             </div>
                         </div>
 
@@ -354,9 +354,9 @@ class Single extends React.Component{
                             <div className="single-populer-post d-flex">
                                 <img src="/assets/img/sidebar-img/1.jpg" alt="" />
                                 <div className="post-content">
-                                    <a href="#">
+                                    <Link to="/">
                                         <h6>Top Wineries To Visit In England</h6>
-                                    </a>
+                                    </Link>
                                     <p>Tuesday, October 3, 2017</p>
                                 </div>
                             </div>
@@ -364,9 +364,9 @@ class Single extends React.Component{
                             <div className="single-populer-post d-flex">
                                 <img src="/assets/img/sidebar-img/2.jpg" alt="" />
                                 <div className="post-content">
-                                    <a href="#">
+                                    <Link to="/">
                                         <h6>The 8 Best Gastro Pubs In Bath</h6>
-                                    </a>
+                                    </Link>
                                     <p>Tuesday, October 3, 2017</p>
                                 </div>
                             </div>
@@ -374,9 +374,9 @@ class Single extends React.Component{
                             <div className="single-populer-post d-flex">
                                 <img src="/assets/img/sidebar-img/3.jpg" alt="" />
                                 <div className="post-content">
-                                    <a href="#">
+                                    <Link to="/">
                                         <h6>Zermatt Unplugged the best festival</h6>
-                                    </a>
+                                    </Link>
                                     <p>Tuesday, October 3, 2017</p>
                                 </div>
                             </div>
@@ -384,9 +384,9 @@ class Single extends React.Component{
                             <div className="single-populer-post d-flex">
                                 <img src="/assets/img/sidebar-img/4.jpg" alt="" />
                                 <div className="post-content">
-                                    <a href="#">
+                                    <Link to="/">
                                         <h6>Harrogate's Top 10 Independent Eats</h6>
-                                    </a>
+                                    </Link>
                                     <p>Tuesday, October 3, 2017</p>
                                 </div>
                             </div>
@@ -394,9 +394,9 @@ class Single extends React.Component{
                             <div className="single-populer-post d-flex">
                                 <img src="/assets/img/sidebar-img/5.jpg" alt="" />
                                 <div className="post-content">
-                                    <a href="#">
+                                    <Link to="/">
                                         <h6>Eating Out On A Budget In Oxford</h6>
-                                    </a>
+                                    </Link>
                                     <p>Tuesday, October 3, 2017</p>
                                 </div>
                             </div>
@@ -411,7 +411,7 @@ class Single extends React.Component{
                                         <div className="yummy-table-cell">
                                             <h2>Cooking Book</h2>
                                             <p>Buy Book Online Now!</p>
-                                            <a href="#" className="add-btn">Buy Now</a>
+                                            <Link to="/" className="add-btn">Buy Now</Link>
                                         </div>
                                     </div>
                                 </div>
