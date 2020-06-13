@@ -1,0 +1,41 @@
+.profile-top{
+    width:100%;
+    margin-top:90px;
+}
+
+.profile-top .prof-pic{
+    background:#f1c40f;
+    width:100%;
+    height:auto;
+    border-radius:60px 15px 60px 15px;
+    padding:15px;
+    text-align:center;
+}
+
+.profile-top .prof-pic img{
+    width:150px;
+    height:150px;
+    border:1px solid grey;
+    border-radius:100%;
+    margin:-85px auto 15px;
+    transition: all 0.5s ease-out;
+}
+
+.profile-top .prof-pic img:hover{
+    filter:contrast(150%) grayscale(70%);
+}
+
+.profile-top .prof-pic .content p{
+    text-align:center;
+    color:#fff;
+}
+
+.profile-top .prof-pic .content p b{
+    color:grey!important
+}
+
+@media (max-width:768px){
+    .content div{
+        display: block!important;
+    }
+}
