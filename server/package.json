@@ -1,0 +1,18 @@
+{
+  "name": "food-blog-backend",
+  "version": "1.0.0",
+  "description": "create backend with node and mongoose and express and graphql",
+  "main": "app.js",
+  "author": "alireza hozhabri",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "express-validator": "^6.5.0",
+    "graphql": "^15.1.0",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.18",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2"
+  }
+}
