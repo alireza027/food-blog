@@ -1,0 +1,8 @@
+{
+  "name": "Food-Blog",
+  "version": "1.0.0",
+  "description": "create backend with express and node and mongodb and graphql",
+  "main": "app.js",
+  "author": "alireza hozhabri <hozhabrialireza27@gmail.com>",
+  "license": "MIT"
+}
