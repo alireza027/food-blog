@@ -57,6 +57,15 @@ body {
     z-index: auto;
 }
 
+.tox-notification .tox-notification--in .tox-notification--warning
+{
+    display: none!important;
+}
+
+.tox-notifications-container{
+    display: none!important;
+}
+
 h1,
 h2,
 h3,
