@@ -14,6 +14,7 @@ import Profile_Update from './components/Profile_User/Profile_Update';
 import User_Likes from './components/Profile_User/User_Likes';
 import User_Comments from './components/Profile_User/User_Comments';
 import User_Posts from './components/Profile_User/User_Posts';
+import Post_Add from './components/Profile_User/Post_Add';
 class App extends React.Component{
   constructor(){
     super();
@@ -37,6 +38,7 @@ class App extends React.Component{
             <Route path="/profile/:username/likes" exact component={User_Likes} />
             <Route path="/profile/:username/comments" exact component={User_Comments} />
             <Route path="/profile/:username/posts" exact component={User_Posts} />
+            <Route path="/profile/:username/add-post" exact component={Post_Add} />
             <Route path="/login" exact component={Login} />
             <Route path="/register" exact component={Register} />
             <Route component={Page_404} />
