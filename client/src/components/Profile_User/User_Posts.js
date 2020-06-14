@@ -77,8 +77,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -114,8 +118,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -151,8 +159,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -188,8 +200,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -225,8 +241,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -262,8 +282,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -296,19 +320,21 @@ class User_Posts extends React.Component{
                                 </div>
                             </div>
                         </div>
-                        
                         </div>
                             <hr></hr>
-                        <div className="row mb-4">
+                            <div className="row mb-4">
                             <div className="col-12 d-flex justify-content-between mb-2">
-                                    <h4 className="ml-2">Cooking</h4>
-                                </div>
-                            
+                                <h4 className="ml-2">Cooking</h4>
+                            </div>
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -344,8 +370,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -381,8 +411,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -418,8 +452,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -455,8 +493,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -492,8 +534,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -526,19 +572,21 @@ class User_Posts extends React.Component{
                                 </div>
                             </div>
                         </div>
-                        
                         </div>
                             <hr></hr>
-                        <div className="row mb-4">
+                            <div className="row mb-4">
                             <div className="col-12 d-flex justify-content-between mb-2">
-                                    <h4 className="ml-2">Life Style</h4>
-                                </div>
-                            
+                                <h4 className="ml-2">Life Style</h4>
+                            </div>
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -574,8 +622,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -611,8 +663,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -648,8 +704,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -685,8 +745,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -722,8 +786,12 @@ class User_Posts extends React.Component{
                             <div className="col-12 col-md-6 col-lg-4">
                             <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                 {/* <!-- Post Thumb --> */}
-                                <div className="post-thumb">
+                                <div className="post-thumb" style={{position:"relative"}}>
                                     <img src="/assets/img/blog-img/2.jpg" alt="" />
+                                    <div style={{position:"absolute",top:"10px",right:"10px"}}>
+                                        <Link to="/" className="btn btn-warning mr-2" title="Update">U</Link>
+                                        <button className="btn btn-danger" title="Delete">D</button>
+                                    </div>
                                 </div>
                                 {/* <!-- Post Content --> */}
                                 <div className="post-content">
@@ -756,9 +824,8 @@ class User_Posts extends React.Component{
                                 </div>
                             </div>
                         </div>
-                        
+                        </div>    
                         </div>
-                    </div>
                 </section>
                 {/* end of archive area end */}
                 </div>
