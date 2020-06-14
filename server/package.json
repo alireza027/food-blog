@@ -1,11 +1,15 @@
 {
-  "name": "food-blog-backend",
+  "name": "yummy-food-blog-backend",
   "version": "1.0.0",
   "description": "create backend with node and mongoose and express and graphql",
   "main": "app.js",
   "author": "alireza hozhabri",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "express-validator": "^6.5.0",
