@@ -1,0 +1,8 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "create backend with express graph",
+  "main": "app.js",
+  "author": "Alireza Hozhabri",
+  "license": "MIT"
+}
