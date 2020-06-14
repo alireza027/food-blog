@@ -48,6 +48,23 @@ class Profile_Update extends React.Component{
                     </div>
                 </div>
 
+                <div className="breadcumb-nav">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                            <nav aria-label="breadcrumb">
+                                <ol className="breadcrumb">
+                                    <li className="breadcrumb-item"><Link to="/"><i className="fa fa-home" aria-hidden="true"></i> Home</Link></li>
+                                    <li className="breadcrumb-item"><Link to="/profile/alireza27"> Profile</Link></li>
+                                    <li className="breadcrumb-item active" aria-current="page">alireza27</li>
+                                    <li className="breadcrumb-item active" aria-current="page">update-profile</li>
+                                </ol>
+                            </nav>
+                        </div>
+                </div>
+            </div>
+        </div>
+
 
             <div className="container mx-auto my-5">
                 <div className="row justify-content-between">
