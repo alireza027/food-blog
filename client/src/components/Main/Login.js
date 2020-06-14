@@ -5,11 +5,11 @@ class Login extends React.Component{
         return(
             <>
             <header className="header_area">
-                    <div className="container">
-                    <div className="row">
-                        <div className="col-12">
+                    <div className="">
+                    <div className="no-gutters">
+                        <div className="w-100">
                             <nav className="navbar navbar-expand-lg">
-                                <button className="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i className="fa fa-bars" aria-hidden="true"></i> Menu</button>
+                                <button className="navbar-toggler py-2" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i className="fa fa-bars" aria-hidden="true"></i> Menu</button>
                                 {/* <!-- Menu Area Start --> */}
                                 <div className="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
                                     <ul className="navbar-nav" id="yummy-nav">
