@@ -1,47 +1,9 @@
 import React from 'react';
-import {Link,NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 class Page_404 extends React.Component{
     render(){
         return(
             <>
-                <header className="header_area">
-                <div className="container">
-                    <div className="row">
-                        {/* <!-- Logo Area Start --> */}
-                        <div className="col-12">
-                            <div className="logo_area text-center">
-                                <Link to="/" className="yummy-logo">Yummy Blog</Link>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-12">
-                            <nav className="navbar navbar-expand-lg">
-                                <button className="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i className="fa fa-bars" aria-hidden="true"></i> Menu</button>
-                                {/* <!-- Menu Area Start --> */}
-                                <div className="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
-                                    <ul className="navbar-nav" id="yummy-nav">
-                                        <li className="nav-item">
-                                            <NavLink to="/" exact className="nav-link">Home <span className="sr-only">(current)</span></NavLink>
-                                        </li>
-                                        <li className="nav-item">
-                                            <NavLink to="/archive" exact className="nav-link">Archive</NavLink>
-                                        </li>
-                                        <li className="nav-item">
-                                            <NavLink to="/login" exact className="nav-link">Login</NavLink>
-                                        </li>
-                                        <li className="nav-item">
-                                            <NavLink to="/register" exact className="nav-link">Register</NavLink>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
                  {/* <!-- ****** Breadcumb Area Start ****** --> */}
                     <div className="breadcumb-area" style={{backgroundImage: "url(/assets/img/bg-img/breadcumb.jpg)"}}>
                         <div className="container h-100">
