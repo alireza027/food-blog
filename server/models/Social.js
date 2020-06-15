@@ -2,10 +2,6 @@ const moment = require('moment');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Social = new Schema({
-    user_id : {
-        type : String,
-        required : true
-    },
     instagram_address : {
         type : String
     },
@@ -37,7 +33,8 @@ const Social = new Schema({
     updated_social : {
         type : String,
         default : moment().format("MMM DD,YYYY")
-    }
+    },
+    user : {type : Schema.Types.ObjectId,ref:"Users"}
 })
 
 module.exports = mongoose.model('Social',Social)

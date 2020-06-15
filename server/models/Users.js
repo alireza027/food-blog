@@ -27,18 +27,18 @@ const Users = new Schema({
     profile_pic : {
         type : String,
     },
+    posts : [{type : Schema.Types.ObjectId,ref:"Posts"}],
     likes : [{type : Schema.Types.ObjectId,ref:"Likes"}],
     Comments : [{type : Schema.Types.ObjectId,ref:"Comments"}],
-    Social : [{type : Schema.Types.ObjectId,ref:"Social"}],
-    Posts : [{type : Schema.Types.ObjectId,ref:"Posts"}],
+    Social : {type : Schema.Types.ObjectId,ref:"Social"},
     created_user : {
-        type : Date,
+        type : String,
         default : moment().format("MMM DD,YYYY")
     },
     updated_user : {
-        type : Date,
+        type : String,
         default : moment().format("MMM DD,YYYY")
     }
 })
 
-module.exports = mongoose.model('users',Users);
+module.exports = mongoose.model('Users',Users);

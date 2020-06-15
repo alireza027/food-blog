@@ -2,9 +2,6 @@ const moment = require('moment');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Posts = new Schema({
-    user_id : {
-        type : String
-    },
     title : {
         type : String,
         required : true
@@ -17,8 +14,9 @@ const Posts = new Schema({
         type : String,  
         required : true
     },
-    Likes : [{type : Schema.Types.ObjectId,ref : "Likes"}],
-    Comments : [{type : Schema.Types.ObjectId,ref : "Comments"}],
+    user : {type : Schema.Types.ObjectId,ref : "Users"},
+    likes : [{type : Schema.Types.ObjectId,ref : "Likes"}],
+    comments : [{type : Schema.Types.ObjectId,ref : "Comments"}],
     created_post : {
         type : String,
         default : moment().format("MMM DD,YYYY")

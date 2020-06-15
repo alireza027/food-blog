@@ -2,15 +2,9 @@ const moment = require('moment');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Comments = new Schema({
-    user_id : {
-        type : String,
-        required : true
-    },
+    user : {type : Schema.Types.ObjectId,ref:"Users"},
+    post : {type : Schema.Types.ObjectId,ref:"Posts"},
     comment_text : {
-        type : String,
-        required : true
-    },
-    post_id : {
         type : String,
         required : true
     },
