@@ -37,4 +37,4 @@ const Social = new Schema({
     user : {type : Schema.Types.ObjectId,ref:"Users"}
 })
 
-module.exports = mongoose.model('Social',Social)
+module.exports = mongoose.model('Socials',Social)

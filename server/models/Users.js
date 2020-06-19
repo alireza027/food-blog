@@ -4,23 +4,23 @@ const Schema = mongoose.Schema;
 const Users = new Schema({
     name : {
         type : String,
-        required : true,
+        required : "name field required"
     },
     username : {
         type : String,
-        required : true,
-        unique : true,
+        required : "username text field required",
+        unique : "username already in use",
         trim : true
     },
     email : {
         type : String,
-        required : true,
-        unique : true,
+        required : "email text field required",
+        unique : "email already in use",
         trim : true
     },
     password : {
         type : String,
-        required : true,
+        required : "password text field required",
         minlength : 8,
         trim : true,
     },
@@ -29,8 +29,8 @@ const Users = new Schema({
     },
     posts : [{type : Schema.Types.ObjectId,ref:"Posts"}],
     likes : [{type : Schema.Types.ObjectId,ref:"Likes"}],
-    Comments : [{type : Schema.Types.ObjectId,ref:"Comments"}],
-    Social : {type : Schema.Types.ObjectId,ref:"Social"},
+    comments : [{type : Schema.Types.ObjectId,ref:"Comments"}],
+    social : {type : Schema.Types.ObjectId,ref:"Socials"},
     created_user : {
         type : String,
         default : moment().format("MMM DD,YYYY")

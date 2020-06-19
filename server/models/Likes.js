@@ -6,7 +6,7 @@ const Likes = new Schema({
     post : {type : Schema.Types.ObjectId,ref:"Posts"},
     created_like : {
         type : String,
-        default : moment().format("YYYY MM DD - HH:mm:SS a")
+        default : moment().format("YYYY MM DD - HH:mm:ss a")
     }
 })
 
