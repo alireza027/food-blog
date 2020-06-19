@@ -1,0 +1,59 @@
+#query Login
+query{
+  Login(username:"alireza",password:"123456789"){
+    id
+    name
+    username
+    email
+    created_user
+    profile_pic
+  }
+}
+
+==================================
+
+mutation{
+  PostAdd(title:"weblog",content:"<p>OK</p>",index_image:"/uploads/server/1.jpg",user:"5ee8deeb16d185c88d6eab7a",tags:["a","b","c"],type:"food"){
+    id
+    title
+    content
+    index_image
+    created_post
+  }
+}
+=======================================
+return Users.find({}).then((resultRegister)=>{
+            return resultRegister.map(reg=>{
+                    if(reg.username === args.username){
+                        return {
+                            code : "400",
+                            message : "This username is already in use"
+                        }
+                    } else if(reg.email === args.email){
+                        return {
+                            code : "400",
+                            message : "This email is already in use"
+                        }
+                    } else if(args.password.length < 8){
+                        return {
+                            code : "400",
+                            message : "Your password must be more than 8 characters long"
+                        }
+                    }else{
+                        var users = new Users({
+                            name : args.name,
+                            username : args.username,
+                            email : args.email,
+                            password : args.password,
+                            profile_pic : args.profile_pic == null ? "" : args.profile_pic
+                        })
+                
+                        return users.save().then(user=>{
+                            return {
+                                code : "201",
+                                message : "Create new user"
+                            }
+                        })
+                    }
+            })
+        })
