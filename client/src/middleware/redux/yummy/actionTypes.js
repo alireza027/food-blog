@@ -22,3 +22,5 @@ export const POST_PAGINATE = "POST_PAGINATE";
 export const ALL_OF_POST = "ALL_OF_POST";
 export const SEARCH_USER = "SEARCH_USER";
 export const SEARCH_POST = "SEARCH_POST";
+export const POST_TYPE = "POST_TYPE";
+export const POPULATE_POST = "POPULATE_POST";

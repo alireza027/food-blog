@@ -22,7 +22,9 @@ import {
     ALL_OF_POST,
     POST_PAGINATE,
     SEARCH_POST,
-    SEARCH_USER
+    SEARCH_USER,
+    POPULATE_POST,
+    POST_TYPE
 } from './actionTypes';
 
 export function userLogin(payload){
@@ -214,5 +216,21 @@ export function searchUser(payload){
         type : SEARCH_USER,
         payload : payload,
         info : "SEARCH USER"
+    };
+}
+
+export function populatePost(payload){
+    return {
+        type : POPULATE_POST,
+        payload : payload,
+        info : "POPULATE POST"
+    };
+}
+
+export function postType(payload){
+    return {
+        type : POST_TYPE,
+        payload : payload,
+        info : "POST TYPE"
     };
 }
