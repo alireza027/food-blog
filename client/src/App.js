@@ -1,5 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import { ApolloProvider } from 'react-apollo';
+import ApolloClient from 'apollo-boost'
 import Home from './components/Main/Home';
 import Archive from './components/Archive/Archive';
 import Single from './components/Main/Single';
@@ -15,6 +17,11 @@ import User_Likes from './components/Profile_User/User_Likes';
 import User_Comments from './components/Profile_User/User_Comments';
 import User_Posts from './components/Profile_User/User_Posts';
 import Post_Add from './components/Profile_User/Post_Add';
+
+const client = new ApolloClient({
+  uri: "http://localhost:8000/graphql",
+})
+
 class App extends React.Component{
   constructor(){
     super();
@@ -25,25 +32,27 @@ class App extends React.Component{
 
   render(){
     return(
-      <Router>
-        <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/archive" exact component={Archive} />
-            <Route path="/archive/archive-food" exact component={Archive_Food} />
-            <Route path="/archive/archive-cooking" exact component={Archive_Cooking} />
-            <Route path="/archive/archive-life-style" exact component={Archive_Style_Life} />
-            <Route path="/post/:id" exact component={Single} />
-            <Route path="/profile/:username" exact component={Profile} />
-            <Route path="/profile/:username/update-profile" exact component={Profile_Update} />
-            <Route path="/profile/:username/likes" exact component={User_Likes} />
-            <Route path="/profile/:username/comments" exact component={User_Comments} />
-            <Route path="/profile/:username/posts" exact component={User_Posts} />
-            <Route path="/profile/:username/add-post" exact component={Post_Add} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/register" exact component={Register} />
-            <Route component={Page_404} />
-          </Switch>
-      </Router>
+      <ApolloProvider client={client}>
+          <Router>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/archive" exact component={Archive} />
+                <Route path="/archive/archive-food" exact component={Archive_Food} />
+                <Route path="/archive/archive-cooking" exact component={Archive_Cooking} />
+                <Route path="/archive/archive-life-style" exact component={Archive_Style_Life} />
+                <Route path="/post/:id" exact component={Single} />
+                <Route path="/profile/:username" exact component={Profile} />
+                <Route path="/profile/:username/update-profile" exact component={Profile_Update} />
+                <Route path="/profile/:username/likes" exact component={User_Likes} />
+                <Route path="/profile/:username/comments" exact component={User_Comments} />
+                <Route path="/profile/:username/posts" exact component={User_Posts} />
+                <Route path="/profile/:username/add-post" exact component={Post_Add} />
+                <Route path="/login" exact component={Login} />
+                <Route path="/register" exact component={Register} />
+                <Route component={Page_404} />
+              </Switch>
+          </Router>
+      </ApolloProvider>
     )
   }
 }
