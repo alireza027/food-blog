@@ -111,17 +111,19 @@ module.exports.root = {
         }).catch(err=>{
             return err;
         })
-        // return Posts.find({ user : mongoose.Types.ObjectId(args.userid) }).then((resultPosts)=>{
-        //     return resultPosts
-        // }).catch(err=>{
-        //     return err;
-        // })
     },
     Post : (args)=>{
         return Posts.findById(args.id).populate('user').populate('likes').populate("comments").then((resultPost)=>{
             return resultPost;
         }).catch(err=>{
             return err;
+        })
+    },
+    PostPaginate : (args)=>{
+        var limit = 12;
+        var page = args.page * limit;
+        return Posts.find({}).skip(page).limit(limit).then(resultPostPaginate=>{
+            return resultPostPaginate;
         })
     },
     PostAdd : (args)=>{
@@ -334,5 +336,26 @@ module.exports.root = {
                 })
             })
         })
-    }
+    },
+
+
+    // Other Schema
+    AllPost : (args)=>{
+        return Posts.find({}).populate('user').populate('likes').populate('comments').then((resultAllPost)=>{
+            return resultAllPost;
+        })
+    },
+
+    SearchUser : (args)=>{
+        return Users.find({ username : args.username }).populate('posts').then((resultSearchUser)=>{
+                return resultSearchUser;
+        })
+    },
+
+    SearchPost : (args)=>{
+        return Posts.find({ $or : [{ title : args.text }, { content : args.text } , { type : args.text }]}).then((resultPost)=>{
+            return resultPost;
+        })
+    },
+    
 }

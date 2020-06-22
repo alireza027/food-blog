@@ -34,6 +34,15 @@ const Types = `
         message : String
     }
 
+    type UserSearch { 
+        id : String 
+        name : String 
+        username : String 
+        email : String 
+        profile_pic : String 
+        posts : [Post]
+    }
+
     type Post {
         id : String
         title : String
@@ -52,6 +61,16 @@ const Types = `
         code : String
         message : String
     }
+
+    type SearchPost {
+        id : String
+        title : String
+        content : String
+        index_image : String
+        created_post : String
+        user : User
+        type : String
+    } 
 
     type Like {
         id : String
@@ -92,12 +111,19 @@ const Query = `
 
         Posts ( userid : String! ) : [Post]
         Post ( id : String! ) : Post
+        PostPaginate( page : Int! ) : [SearchPost]
 
         Social ( id : String! ) : Social
 
         Likes ( id : String! ) : [Like]
 
         Comments ( id : String! ) : Comment
+
+        AllPost : [Post]
+
+        SearchUser ( username : String!) : [UserSearch]
+
+        SearchPost ( text : String! ) : [SearchPost]
     }
 `;
 
