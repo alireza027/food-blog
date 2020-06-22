@@ -119,6 +119,11 @@ module.exports.root = {
             return err;
         })
     },
+    PostType : (args)=>{
+        return Posts.find({ type : args.type }).populate('user').then(resultUserType=>{
+            return resultUserType;
+        })
+    },
     PostPaginate : (args)=>{
         var limit = 12;
         var page = args.page * limit;
@@ -147,7 +152,6 @@ module.exports.root = {
     },
     PostUpdate : (args)=>{
         return Posts.findByIdAndUpdate(args.id).then((resultpost)=>{
-            console.log(resultpost);
             return  Posts.findByIdAndUpdate(args.id,{
                 title : args.title == null ? resultpost.title : args.title,
                 content : args.content == null ? resultpost.content : args.content,
@@ -171,6 +175,11 @@ module.exports.root = {
             })
         }).catch(err=>{
             return err;
+        })
+    },
+    PopulatePost : (args)=>{
+        return Posts.find({}).populate('user').limit(5).sort({ likes : -1 }).then((resultPopulatePost)=>{
+            return resultPopulatePost;
         })
     },
 
@@ -231,7 +240,6 @@ module.exports.root = {
     },
     SocialDelete : (args)=>{
         return Social.findByIdAndDelete(args.id).then((resultSocial)=>{
-            console.log(resultSocial);
             return Users.updateOne({social : args.id},{
                 $unset : { social : "" }
             }).then(resultUser=>{
@@ -245,7 +253,6 @@ module.exports.root = {
     // Like Model
     Likes : (args)=>{
         return Likes.find({user : args.id}).populate('user').then((resultLikes)=>{
-            console.log(resultLikes)
             return resultLikes;
         }).catch(err=>{
             return err;
@@ -253,7 +260,7 @@ module.exports.root = {
     },
     LikeAdd : (args)=>{
         return Likes.find({ user : args.user , like : args.post }).then(resultLikesGet=>{
-            if(resultLikesGet == null){
+            if(resultLikesGet == "" ){
                 var like = new Likes({
                     user : args.user ,
                     like : args.post ,

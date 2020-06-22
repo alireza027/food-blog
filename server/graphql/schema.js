@@ -55,7 +55,22 @@ const Types = `
         comments : Comment
         tags : [String]
         type : String
-    } 
+    }
+    
+    type PostPopular {
+        id : String
+        title : String
+        content : String
+        index_image : String
+        created_post : String
+        updated_post : String
+        user : User
+        likes : Like
+        countOfLike : String
+        comments : Comment
+        tags : [String]
+        type : String
+    }
 
     type CodeMessage {
         code : String
@@ -109,8 +124,10 @@ const Query = `
     type Query {
         Login ( username : String! , password : String ) : UserCodeMessage
 
+        AllPost : [Post]
         Posts ( userid : String! ) : [Post]
         Post ( id : String! ) : Post
+        PostType ( type : String! ) : [Post]
         PostPaginate( page : Int! ) : [SearchPost]
 
         Social ( id : String! ) : Social
@@ -119,11 +136,11 @@ const Query = `
 
         Comments ( id : String! ) : Comment
 
-        AllPost : [Post]
-
         SearchUser ( username : String!) : [UserSearch]
 
         SearchPost ( text : String! ) : [SearchPost]
+
+        PopulatePost : [PostPopular]
     }
 `;
 
