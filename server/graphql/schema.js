@@ -127,6 +127,7 @@ const Query = `
         AllPost : [Post]
         Posts ( userid : String! ) : [Post]
         Post ( id : String! ) : Post
+
         PostType ( type : String! ) : [Post]
         PostPaginate( page : Int! ) : [SearchPost]
 
@@ -134,20 +135,20 @@ const Query = `
 
         Likes ( id : String! ) : [Like]
 
-        Comments ( id : String! ) : Comment
+        Comments ( id : String! ) : [Comment]
 
         SearchUser ( username : String!) : [UserSearch]
 
         SearchPost ( text : String! ) : [SearchPost]
 
-        PopulatePost : [PostPopular]
+        PopulatePost : [Post]
     }
 `;
 
 const Mutation = `
     type Mutation {
         Register( name:String! , username:String! , email:String! , password:String! , profile_pic:String ) : CodeMessage
-        UserUpdate( name:String , username:String , email:String , password:String , profile_pic:String  ) : User
+        UserUpdate( name:String , username:String , email:String , password:String , profile_pic:String  , id : String!) : User
         UserDelete( id : String! ) : User
 
         PostAdd( title : String! , content : String! , index_image : String! , user : String! , tags : [String] , type : String! ) : Post

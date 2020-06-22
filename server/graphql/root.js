@@ -126,8 +126,8 @@ module.exports.root = {
     },
     PostPaginate : (args)=>{
         var limit = 12;
-        var page = args.page * limit;
-        return Posts.find({}).skip(page).limit(limit).then(resultPostPaginate=>{
+        var page = args.page == 0 || args.page == 1 ? 0 * limit : (args.page-1) * limit ;
+        return Posts.find({}).populate('user').skip(page).limit(limit).then(resultPostPaginate=>{
             return resultPostPaginate;
         })
     },
@@ -185,15 +185,15 @@ module.exports.root = {
 
     // Social Model
     Social : (args)=>{
-        return Social.findById(args.id).then(socialResult=>{
+        return Social.findOne({user:args.id}).populate('user').then(socialResult=>{
             return socialResult;
         }).catch(err=>{
             return err;
         })
     },
     SocialAdd : (args)=>{
-        return Users.findOne({social:args.user}).then(resultUsers=>{
-            if(resultUsers != null){
+        return Users.findById(args.user).then(resultUsers=>{
+            if(resultUsers.social == undefined){
                 var social = new Social({
                     user : args.user,
                     instagram_address : args.instagram_address == null ? "" : args.instagram_address,
@@ -224,7 +224,7 @@ module.exports.root = {
         })
     },
     SocialUpdate : (args)=>{
-        return Social.findById(args.user).then(resultSocial=>{
+        return Social.find({user:args.user}).then(resultSocial=>{
             return Social.findByIdAndUpdate(args.user,{
                 instagram_address : args.instagram_address == null ? resultSocial.instagram_address : args.instagram_address,
                 facebook_address : args.facebook_address == null ?  resultSocial.facebook_address : args.facebook_address,
@@ -252,7 +252,7 @@ module.exports.root = {
 
     // Like Model
     Likes : (args)=>{
-        return Likes.find({user : args.id}).populate('user').then((resultLikes)=>{
+        return Likes.find({user : args.id}).populate('user').populate('post').then((resultLikes)=>{
             return resultLikes;
         }).catch(err=>{
             return err;
@@ -263,7 +263,7 @@ module.exports.root = {
             if(resultLikesGet == "" ){
                 var like = new Likes({
                     user : args.user ,
-                    like : args.post ,
+                    post : args.post 
                 })
                 return like.save().then((resultLike)=>{
                     return Users.findByIdAndUpdate(args.user,{$push : {likes:resultLike._id}}).then(resultUser=>{
@@ -282,12 +282,6 @@ module.exports.root = {
                 };
             }
         })
-        // Users.findByIdAndUpdate('5eeb921e5c27d861fc71330e',{$push : {likes:result._id}
-        //     }).then(()=>{
-        //         Posts.findByIdAndUpdate('5eebabec5d32308833a69e84',{
-        //             $push : {likes:result._id}
-        //         }).then(()=>{res.status(200).json(result)});
-        //     });
     },
     LikeDelete : (args)=>{
         return Likes.findById(args.id).then(resultLikeGet=>{
@@ -303,7 +297,7 @@ module.exports.root = {
 
     // Comment Model
     Comments : (args)=>{
-        return Comments.findById(args.id).populate('user').then((resultComment)=>{
+        return Comments.find({user:args.id}).populate('user').populate('post').then((resultComment)=>{
             return resultComment;
         }).catch(err=>{
             return err;
@@ -354,13 +348,13 @@ module.exports.root = {
     },
 
     SearchUser : (args)=>{
-        return Users.find({ username : args.username }).populate('posts').then((resultSearchUser)=>{
+        return Users.find({ username : args.username }).then((resultSearchUser)=>{
                 return resultSearchUser;
         })
     },
 
     SearchPost : (args)=>{
-        return Posts.find({ $or : [{ title : args.text }, { content : args.text } , { type : args.text }]}).then((resultPost)=>{
+        return Posts.find({ $or : [{ title : args.text }, { content : args.text } , { type : args.text }]}).populate('user').then((resultPost)=>{
             return resultPost;
         })
     },
