@@ -27,11 +27,10 @@ class Header extends React.Component{
                   <div className="col-5 col-sm-6">
                       {/* <!--  Top Social bar start --> */}
                       <div className="top_social_bar">
-                          <Link to="/"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
-                          <Link to="/"><i className="fa fa-twitter" aria-hidden="true"></i></Link>
-                          <Link to="/"><i className="fa fa-linkedin" aria-hidden="true"></i></Link>
-                          <Link to="/"><i className="fa fa-skype" aria-hidden="true"></i></Link>
-                          <Link to="/"><i className="fa fa-dribbble" aria-hidden="true"></i></Link>
+                          <Link to="https://www.facebook.com/" target="_blank"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
+                          <Link to="https://twitter.com/" target="_blank"><i className="fa fa-twitter" aria-hidden="true"></i></Link>
+                          <Link to="https://www.linkedin.com/" target="_blank"><i className="fa fa-linkedin" aria-hidden="true"></i></Link>
+                          <Link to="https://www.skype.com/en/" target="_blank" ><i className="fa fa-skype" aria-hidden="true"></i></Link>
                       </div>
                   </div>
                   {/* <!--  Login Register Area --> */}
