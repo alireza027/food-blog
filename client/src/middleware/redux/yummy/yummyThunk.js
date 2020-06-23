@@ -25,6 +25,7 @@ import {
     allOfPost,
     postType,
     populatePost,
+    userToken
 } from './actions';
 
 // query
@@ -314,6 +315,24 @@ export const PopulatePostQuery = ()=>{
                 }
             }`;
         dispatch(populatePost(Query));
+    }
+}
+
+export const UserTokenQuery = ()=>{
+    return function (dispatch){
+        const Query =`
+            query UserTokenQuery($token:String!){
+                UserToken(token:$token){
+                    id
+                    name
+                    username
+                    email
+                    password
+                    profile_pic
+                    created_user
+                }
+            }`;
+        dispatch(userToken(Query));
     }
 }
 

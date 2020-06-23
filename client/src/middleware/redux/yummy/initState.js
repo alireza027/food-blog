@@ -22,5 +22,6 @@ export const initState = {
     posts : [{id:1,title:"a1",content:"a2"}],
     postSearch : [],
     userSearch : [],
+    userToken : [],
     info : ""
 }

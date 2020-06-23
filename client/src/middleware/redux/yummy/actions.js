@@ -24,7 +24,8 @@ import {
     SEARCH_POST,
     SEARCH_USER,
     POPULATE_POST,
-    POST_TYPE
+    POST_TYPE,
+    USER_TOKEN,
 } from './actionTypes';
 
 export function userLogin(payload){
@@ -232,5 +233,13 @@ export function postType(payload){
         type : POST_TYPE,
         payload : payload,
         info : "POST TYPE"
+    };
+}
+
+export function userToken(payload){
+    return {
+        type : USER_TOKEN,
+        payload : payload,
+        info : "USER TOKEN"
     };
 }

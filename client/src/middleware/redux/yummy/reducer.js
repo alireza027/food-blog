@@ -20,9 +20,10 @@ import {
     COMMENT_UPDATE,
     COMMENT_DELETE,
     ALL_OF_POST,
-    // POST_PAGINATE,
+    POST_PAGINATE,
     SEARCH_POST,
-    SEARCH_USER
+    SEARCH_USER,
+    USER_TOKEN
 } from './actionTypes';
 
 
@@ -173,6 +174,18 @@ export const yummyReducer = (state = initState,action)=>{
                 info : action.info
             };
         case ALL_OF_POST:
+            return {
+                ...state,
+                posts : action.payload,
+                info : action.info
+            };
+        case POST_PAGINATE:
+            return {
+                ...state,
+                posts : action.payload,
+                info : action.info
+            };
+        case USER_TOKEN:
             return {
                 ...state,
                 posts : action.payload,

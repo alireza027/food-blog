@@ -24,3 +24,4 @@ export const SEARCH_USER = "SEARCH_USER";
 export const SEARCH_POST = "SEARCH_POST";
 export const POST_TYPE = "POST_TYPE";
 export const POPULATE_POST = "POPULATE_POST";
+export const USER_TOKEN = "USER_TOKEN";
