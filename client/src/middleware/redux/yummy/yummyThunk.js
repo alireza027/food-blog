@@ -89,24 +89,6 @@ export const UserPostsThunk = ()=>{
     }
 }
 
-export const UserPostsThunk = ()=>{
-    return function (dispatch){
-        const Query =`
-            query UserPostsQuery($userid:String!){
-                    Posts(userid:$userid){
-                    id
-                    title
-                    content
-                    index_image
-                    created_post
-                    tags
-                    type
-                }
-            }`;
-        dispatch(postAll(Query));
-    }
-}
-
 export const PostSingleQuery = ()=>{
     return function (dispatch){
         const Query =`

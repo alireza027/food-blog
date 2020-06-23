@@ -23,7 +23,9 @@ import {
     POST_PAGINATE,
     SEARCH_POST,
     SEARCH_USER,
-    USER_TOKEN
+    USER_TOKEN,
+    POPULATE_POST,
+    POST_TYPE,
 } from './actionTypes';
 
 
@@ -182,13 +184,27 @@ export const yummyReducer = (state = initState,action)=>{
         case POST_PAGINATE:
             return {
                 ...state,
-                posts : action.payload,
+                postPaginate : action.payload,
                 info : action.info
             };
         case USER_TOKEN:
             return {
                 ...state,
-                posts : action.payload,
+                userToken : action.payload,
+                info : action.info
+            };
+
+        case POPULATE_POST:
+            return {
+                ...state,
+                populatePost : action.payload,
+                info : action.info
+            };
+
+        case POST_TYPE:
+            return {
+                ...state,
+                postType : action.payload,
                 info : action.info
             };
         default:

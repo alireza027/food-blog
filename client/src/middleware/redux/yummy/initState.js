@@ -19,9 +19,12 @@ export const initState = {
     commentAdd : [],
     commentUpdate : [],
     commentDelete : [],
-    posts : [{id:1,title:"a1",content:"a2"}],
+    posts : [],
     postSearch : [],
     userSearch : [],
     userToken : [],
+    postPaginate : [],
+    postType : [],
+    populatePost : [],
     info : ""
 }
