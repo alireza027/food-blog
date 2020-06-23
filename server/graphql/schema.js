@@ -123,6 +123,7 @@ const Types = `
 const Query = `
     type Query {
         Login ( username : String! , password : String ) : UserCodeMessage
+        UserToken( token : String! ) : User
 
         AllPost : [Post]
         Posts ( userid : String! ) : [Post]

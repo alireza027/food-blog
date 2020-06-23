@@ -31,6 +31,12 @@ module.exports.root = {
             return err;
         })
     },
+    UserToken : (args)=>{
+        var jwwt = jwt.verify(args.token,process.env.SECRET_KEY);
+        return Users.findById(jwwt.id).populate("user").populate('post').populate('likes').populate('comments').populate('social').then((resultUserToken)=>{
+            return resultUserToken;
+        })
+    },
     Register : (args)=>{
             return Users.findOne({username : args.username}).then(resultUsername=>{
                 if(resultUsername != null){
