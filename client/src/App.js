@@ -8,6 +8,7 @@ import Single from './components/Main/Single';
 import Login from './components/Main/Login';
 import Register from './components/Main/Register';
 import Page_404 from './components/Main/Page_404';
+import User_Profile from './components/Main/User_Profile';
 import Archive_Food from './components/Archive/Archive_Food';
 import Archive_Cooking from './components/Archive/Archive_Cooking';
 import Archive_Style_Life from './components/Archive/Archive_Style_Life';
@@ -17,6 +18,7 @@ import User_Likes from './components/Profile_User/User_Likes';
 import User_Comments from './components/Profile_User/User_Comments';
 import User_Posts from './components/Profile_User/User_Posts';
 import Post_Add from './components/Profile_User/Post_Add';
+import Search from './components/Main/Search';
 
 const client = new ApolloClient({
   uri: "http://localhost:8000/graphql",
@@ -41,6 +43,8 @@ class App extends React.Component{
                 <Route path="/archive/archive-cooking" exact component={Archive_Cooking} />
                 <Route path="/archive/archive-life-style" exact component={Archive_Style_Life} />
                 <Route path="/post/:id" exact component={Single} />
+                <Route path="/user/:id" exact component={User_Profile} />
+                <Route path="/search/:text" exact component={Search} />
                 <Route path="/profile/:username" exact component={Profile} />
                 <Route path="/profile/:username/update-profile" exact component={Profile_Update} />
                 <Route path="/profile/:username/likes" exact component={User_Likes} />
