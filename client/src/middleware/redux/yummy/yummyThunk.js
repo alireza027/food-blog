@@ -44,6 +44,12 @@ export const AllPostThunk = ()=>{
                         id
                         username
                     }
+                    likes{
+                        id
+                    }
+                    comments{
+                        id
+                    }
                 }
             }`;
         dispatch(allOfPost(Query));
@@ -83,6 +89,12 @@ export const UserPostsThunk = ()=>{
                     created_post
                     tags
                     type
+                    likes{
+                        id
+                    }
+                    comments{
+                        id
+                    }
                 }
             }`;
         dispatch(postAll(Query));
@@ -107,9 +119,9 @@ export const PostSingleQuery = ()=>{
                     profile_pic
                 }
                 likes{
-                        id
-                        created_like
-                        user{
+                    id
+                    created_like
+                    user{
                         id
                         username
                         profile_pic
@@ -178,8 +190,8 @@ export const PostPaginateQuery = ()=>{
 export const SocialGetQuery = ()=>{
     return function (dispatch){
         const Query =`
-            query SocialGetQuery($id:String!){
-                Social(id:$id){
+            query SocialGetQuery($id: String!) {
+                Social(id: $id) {
                     id
                     instagram_address
                     facebook_address
@@ -190,9 +202,9 @@ export const SocialGetQuery = ()=>{
                     youtube_address
                     vimeo_address
                     created_social
-                    user{
-                        id
+                    user {
                         username
+                        profile_pic
                     }
                 }
             }`;
@@ -247,10 +259,8 @@ export const SearchUserQuery = ()=>{
             query SearchUserQuery($username:String!){
                 SearchUser(username:$username){
                     id
-                    name
                     username
-                    email
-                    profile_pic
+                    profile_pic  
                 }
             }`;
         dispatch(searchUser(Query));
