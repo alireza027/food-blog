@@ -1,102 +1,105 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { connect } from "react-redux";
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+import {PostSingleQuery} from '../../middleware/redux/yummy/yummyThunk'
+import ReactHtmlParser from 'react-html-parser'
 import Header from './Header';
 import Footer from './Footer';
 class Single extends React.Component{
   constructor(){
     super();
     this.state = {
-        
+        id : "",
+        isActive : false
     }
   }
 
-  render(){
+  componentDidMount(){
+      this.props.getPost();
+      this.setState({
+          id : this.props.match.params.id,
+          isActive : true
+      })
+  }
+
+  render(){ 
+      const POPULATE_POST = gql(this.props.populatePost);
+      const POST_SINGLE = this.state.isActive && gql(this.props.postSingle);
     return(
       <>
         {/* start header */}
           <Header/>
         {/* end of header */}
 
-        {/* <!-- ****** Breadcumb Area Start ****** --> */}
-          <div className="breadcumb-area" style={{backgroundImage:"url(/assets/img/bg-img/breadcumb.jpg)"}}>
-              <div className="container h-100">
-                  <div className="row h-100 align-items-center">
-                      <div className="col-12">
-                          <div className="bradcumb-title text-center">
-                              <h2>Single Post Blog</h2>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div className="breadcumb-nav">
-              <div className="container">
-                  <div className="row">
-                      <div className="col-12">
-                          <nav aria-label="breadcrumb">
-                              <ol className="breadcrumb">
-                                  <li className="breadcrumb-item"><Link to="/"><i className="fa fa-home" aria-hidden="true"></i> Home</Link></li>
-                                  <li className="breadcrumb-item"><Link to="/">Archive</Link></li>
-                                  <li className="breadcrumb-item active" aria-current="page">Single Post Blog</li>
-                              </ol>
-                          </nav>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          {/* <!-- ****** Breadcumb Area End ****** --> */}
+    {this.state.isActive && (
+            <Query query={POST_SINGLE} variables={{id:this.state.id}}>
+                {({loading,error,data})=>{
+                    if(loading) return(<></>);
+                    if(error) return (<></>);
+                    console.log(data);
+                }}
+            </Query>
+    )}
+            <div className="breadcumb-area" style={{backgroundImage:"url(/assets/img/bg-img/breadcumb.jpg)"}}>
+                <div className="container h-100">
+                    <div className="row h-100 align-items-center">
+                        <div className="col-12">
+                            <div className="bradcumb-title text-center">
+                                <h2>Single Post Blog</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div className="breadcumb-nav">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <nav aria-label="breadcrumb">
+                                    <ol className="breadcrumb">
+                                        <li className="breadcrumb-item"><Link to="/"><i className="fa fa-home" aria-hidden="true"></i> Home</Link></li>
+                                        <li className="breadcrumb-item"><Link to="/">Archive</Link></li>
+                                        <li className="breadcrumb-item active" aria-current="page">Single Post Blog</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
 
 
-
-          {/* <!-- ****** Single Blog Area Start ****** --> */}
-    <section className="single_blog_area section_padding_80">
+          
+                <section className="single_blog_area section_padding_80">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-12 col-lg-8">
                     <div className="row no-gutters">
 
-                        {/* <!-- Single Post Share Info --> */}
-                        <div className="col-2 col-sm-1">
-                            <div className="single-post-share-info mt-100">
-                                <Link to="/" className="facebook"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
-                                <Link to="/" className="twitter"><i className="fa fa-twitter" aria-hidden="true"></i></Link>
-                                <Link to="/" className="googleplus"><i className="fa fa-google-plus" aria-hidden="true"></i></Link>
-                                <Link to="/" className="instagram"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
-                                <Link to="/" className="pinterest"><i className="fa fa-pinterest" aria-hidden="true"></i></Link>
-                            </div>
-                        </div>
-
-                        {/* <!-- Single Post --> */}
-                        <div className="col-10 col-sm-11">
+                        <div className="col-10 col-sm-12">
                             <div className="single-post">
-                                {/* <!-- Post Thumb --> */}
                                 <div className="post-thumb">
                                     <img src="/assets/img/blog-img/10.jpg" alt="" />
                                 </div>
-                                {/* <!-- Post Content --> */}
                                 <div className="post-content">
                                     <div className="post-meta d-flex">
                                         <div className="post-author-date-area d-flex">
-                                            {/* <!-- Post Author --> */}
                                             <div className="post-author">
                                                 <Link to="/">By Marian</Link>
                                             </div>
-                                            {/* <!-- Post Date --> */}
                                             <div className="post-date">
-                                                <Link to="/">May 19, 2017</Link>
+                                                <p style={{color:"#b5aec4",fontSize:"16px"}}>May 19, 2017</p>
                                             </div>
                                         </div>
-                                        {/* <!-- Post Comment & Share Area --> */}
                                         <div className="post-comment-share-area d-flex">
-                                            {/* <!-- Post Favourite --> */}
                                             <div className="post-favourite">
                                                 <Link to="/"><i className="fa fa-heart-o" aria-hidden="true"></i> 10</Link>
                                             </div>
-                                            {/* <!-- Post Comments --> */}
                                             <div className="post-comments">
                                                 <Link to="/"><i className="fa fa-comment-o" aria-hidden="true"></i> 12</Link>
                                             </div>
-                                            {/* <!-- Post Share --> */}
                                             <div className="post-share">
                                                 <Link to="/"><i className="fa fa-share-alt" aria-hidden="true"></i></Link>
                                             </div>
@@ -139,173 +142,25 @@ class Single extends React.Component{
                                 </div>
                             </div>
 
-                            {/* <!-- Tags Area --> */}
-                            <div className="tags-area">
-                                <Link to="/">Multipurpose</Link>
-                                <Link to="/">Design</Link>
-                                <Link to="/">Ideas</Link>
+                            <div className="tags-area d-flex">
+                                <p style={{padding:"5px 8px ",background:"#e67e22",color:"#fff"}}>Multipurpose</p>
+                                <p style={{padding:"5px 8px ",background:"#e67e22",color:"#fff",borderLeft:"1px solid #fff"}}>Design</p>
+                                <p style={{padding:"5px 8px ",background:"#e67e22",color:"#fff",borderLeft:"1px solid #fff"}}>Ideas</p>
                             </div>
 
-                            {/* <!-- Related Post Area --> */}
-                            <div className="related-post-area section_padding_50">
-                                <h4 className="mb-30">Related post</h4>
 
-                                <div className="related-post-slider owl-carousel">
-                                    {/* <!-- Single Related Post--> */}
-                                    <div className="single-post">
-                                        {/* <!-- Post Thumb --> */}
-                                        <div className="post-thumb">
-                                            <img src="/assets/img/blog-img/15.jpg" alt="" />
-                                        </div>
-                                        {/* <!-- Post Content --> */}
-                                        <div className="post-content">
-                                            <div className="post-meta d-flex">
-                                                <div className="post-author-date-area d-flex">
-                                                    {/* <!-- Post Author --> */}
-                                                    <div className="post-author">
-                                                        <Link to="/">By Marian</Link>
-                                                    </div>
-                                                    {/* <!-- Post Date --> */}
-                                                    <div className="post-date">
-                                                        <Link to="/">May 19, 2017</Link>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <Link to="/">
-                                                <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                    {/* <!-- Single Related Post--> */}
-                                    <div className="single-post">
-                                        {/* <!-- Post Thumb --> */}
-                                        <div className="post-thumb">
-                                            <img src="/assets/img/blog-img/5.jpg" alt="" />
-                                        </div>
-                                        {/* <!-- Post Content --> */}
-                                        <div className="post-content">
-                                            <div className="post-meta d-flex">
-                                                <div className="post-author-date-area d-flex">
-                                                    {/* <!-- Post Author --> */}
-                                                    <div className="post-author">
-                                                        <Link to="/">By Marian</Link>
-                                                    </div>
-                                                    {/* <!-- Post Date --> */}
-                                                    <div className="post-date">
-                                                        <Link to="/">May 19, 2017</Link>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <Link to="/">
-                                                <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                    {/* <!-- Single Related Post--> */}
-                                    <div className="single-post">
-                                        {/* <!-- Post Thumb --> */}
-                                        <div className="post-thumb">
-                                            <img src="/assets/img/blog-img/16.jpg" alt="" />
-                                        </div>
-                                        {/* <!-- Post Content --> */}
-                                        <div className="post-content">
-                                            <div className="post-meta d-flex">
-                                                <div className="post-author-date-area d-flex">
-                                                    {/* <!-- Post Author --> */}
-                                                    <div className="post-author">
-                                                        <Link to="/">By Marian</Link>
-                                                    </div>
-                                                    {/* <!-- Post Date --> */}
-                                                    <div className="post-date">
-                                                        <Link to="/">May 19, 2017</Link>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <Link to="/">
-                                                <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                    {/* <!-- Single Related Post--> */}
-                                    <div className="single-post">
-                                        {/* <!-- Post Thumb --> */}
-                                        <div className="post-thumb">
-                                            <img src="/assets/img/blog-img/5.jpg" alt="" />
-                                        </div>
-                                        {/* <!-- Post Content --> */}
-                                        <div className="post-content">
-                                            <div className="post-meta d-flex">
-                                                <div className="post-author-date-area d-flex">
-                                                    {/* <!-- Post Author --> */}
-                                                    <div className="post-author">
-                                                        <Link to="/">By Marian</Link>
-                                                    </div>
-                                                    {/* <!-- Post Date --> */}
-                                                    <div className="post-date">
-                                                        <Link to="/">May 19, 2017</Link>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <Link to="/">
-                                                <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* <!-- Comment Area Start --> */}
                             <div className="comment_area section_padding_50 clearfix">
                                 <h4 className="mb-30">2 Comments</h4>
                                 <ol>
-                                    {/* <!-- Single Comment Area --> */}
                                     <li className="single_comment_area">
                                         <div className="comment-wrapper d-flex">
-                                            {/* <!-- Comment Meta --> */}
-                                            <div className="comment-author">
-                                                <img src="/assets/img/blog-img/17.jpg" alt="" />
-                                            </div>
-                                            {/* <!-- Comment Content --> */}
-                                            <div className="comment-content">
-                                                <span className="comment-date text-muted">27 Aug 2018</span>
-                                                <h5>Brandon Kelley</h5>
-                                                <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
-                                                <Link to="/">Like</Link>
-                                                <Link to="/" className="active">Reply</Link>
-                                            </div>
-                                        </div>
-                                        <ol className="children">
-                                            <li className="single_comment_area">
-                                                <div className="comment-wrapper d-flex">
-                                                    {/* <!-- Comment Meta --> */}
-                                                    <div className="comment-author">
-                                                        <img src="/assets/img/blog-img/18.jpg" alt="" />
-                                                    </div>
-                                                    {/* <!-- Comment Content --> */}
-                                                    <div className="comment-content">
-                                                        <span className="comment-date text-muted">27 Aug 2018</span>
-                                                        <h5>Brandon Kelley</h5>
-                                                        <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
-                                                        <Link to="/">Like</Link>
-                                                        <Link to="/" className="active">Reply</Link>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li className="single_comment_area">
-                                        <div className="comment-wrapper d-flex">
-                                            {/* <!-- Comment Meta --> */}
                                             <div className="comment-author">
                                                 <img src="/assets/img/blog-img/19.jpg" alt="" />
                                             </div>
-                                            {/* <!-- Comment Content --> */}
                                             <div className="comment-content">
                                                 <span className="comment-date text-muted">27 Aug 2018</span>
                                                 <h5>Brandon Kelley</h5>
                                                 <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
-                                                <Link to="/">Like</Link>
-                                                <Link to="/" className="active">Reply</Link>
                                             </div>
                                         </div>
                                     </li>
@@ -315,10 +170,8 @@ class Single extends React.Component{
                     </div>
                 </div>
 
-                {/* <!-- ****** Blog Sidebar ****** --> */}
                 <div className="col-12 col-sm-8 col-md-6 col-lg-4">
                     <div className="blog-sidebar mt-5 mt-lg-0">
-                        {/* <!-- Single Widget Area --> */}
                         <div className="single-widget-area about-me-widget text-center">
                             <div className="widget-title">
                                 <h6>About Me</h6>
@@ -330,79 +183,46 @@ class Single extends React.Component{
                             <p>My name is Alireza Hozhabri - I'm 19 years old - i'm little programmer - My favorite language Javascript</p>
                         </div>
 
-                        {/* <!-- Single Widget Area --> */}
                         <div className="single-widget-area subscribe_widget text-center">
                             <div className="widget-title">
                                 <h6>Subscribe &amp; Follow</h6>
                             </div>
                             <div className="subscribe-link">
-                                <Link to="/"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
-                                <Link to="/"><i className="fa fa-twitter" aria-hidden="true"></i></Link>
-                                <Link to="/"><i className="fa fa-google" aria-hidden="true"></i></Link>
-                                <Link to="/"><i className="fa fa-linkedin-square" aria-hidden="true"></i></Link>
-                                <Link to="/"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
-                                <Link to="/"><i className="fa fa-vimeo" aria-hidden="true"></i></Link>
+                                <a href="https://www.facebook.com/" target="_blank"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/" target="_blank"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="http://gmail.com" target="_blank"><i className="fa fa-google" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="https://vimeo.com/" target="_blank"><i className="fa fa-vimeo" aria-hidden="true"></i></a>
                             </div>
                         </div>
 
-                        {/* <!-- Single Widget Area --> */}
                         <div className="single-widget-area popular-post-widget">
                             <div className="widget-title text-center">
                                 <h6>Populer Post</h6>
                             </div>
-                            {/* <!-- Single Popular Post --> */}
-                            <div className="single-populer-post d-flex">
-                                <img src="/assets/img/sidebar-img/1.jpg" alt="" />
-                                <div className="post-content">
-                                    <Link to="/">
-                                        <h6>Top Wineries To Visit In England</h6>
-                                    </Link>
-                                    <p>Tuesday, October 3, 2017</p>
-                                </div>
-                            </div>
-                            {/* <!-- Single Popular Post --> */}
-                            <div className="single-populer-post d-flex">
-                                <img src="/assets/img/sidebar-img/2.jpg" alt="" />
-                                <div className="post-content">
-                                    <Link to="/">
-                                        <h6>The 8 Best Gastro Pubs In Bath</h6>
-                                    </Link>
-                                    <p>Tuesday, October 3, 2017</p>
-                                </div>
-                            </div>
-                            {/* <!-- Single Popular Post --> */}
-                            <div className="single-populer-post d-flex">
-                                <img src="/assets/img/sidebar-img/3.jpg" alt="" />
-                                <div className="post-content">
-                                    <Link to="/">
-                                        <h6>Zermatt Unplugged the best festival</h6>
-                                    </Link>
-                                    <p>Tuesday, October 3, 2017</p>
-                                </div>
-                            </div>
-                            {/* <!-- Single Popular Post --> */}
-                            <div className="single-populer-post d-flex">
-                                <img src="/assets/img/sidebar-img/4.jpg" alt="" />
-                                <div className="post-content">
-                                    <Link to="/">
-                                        <h6>Harrogate's Top 10 Independent Eats</h6>
-                                    </Link>
-                                    <p>Tuesday, October 3, 2017</p>
-                                </div>
-                            </div>
-                            {/* <!-- Single Popular Post --> */}
-                            <div className="single-populer-post d-flex">
-                                <img src="/assets/img/sidebar-img/5.jpg" alt="" />
-                                <div className="post-content">
-                                    <Link to="/">
-                                        <h6>Eating Out On A Budget In Oxford</h6>
-                                    </Link>
-                                    <p>Tuesday, October 3, 2017</p>
-                                </div>
-                            </div>
-                        </div>
+                            <Query query={POPULATE_POST}>
+                                  {({loading,error,data})=>{
+                                    if(loading) return (<></>);
+                                    if(error) return (<></>);
+                                    return data.PopulatePost.map((post,index)=>{
+                                     return (
+                                      <div className="single-populer-post d-flex" key={index}>
+                                      {/* change here */}
+                                      <img src="/assets/img/sidebar-img/1.jpg" alt="" />
+                                      <div className="post-content">
+                                          <Link to={`/post/${post.id}`}>
+                                              <h6>{post.title}</h6>
+                                          </Link>
+                                          <p>{post.created_post}</p>
+                                      </div>
+                                    </div>
+                                     ) 
+                                    })
+                                  }}
+                                </Query>
+                           </div>
 
-                        {/* <!-- Single Widget Area --> */}
                         <div className="single-widget-area add-widget text-center">
                             <div className="add-widget-area">
                                 <img src="/assets/img/sidebar-img/6.jpg" alt="" />
@@ -410,8 +230,8 @@ class Single extends React.Component{
                                     <div className="yummy-table">
                                         <div className="yummy-table-cell">
                                             <h2>Cooking Book</h2>
-                                            <p>Buy Book Online Now!</p>
-                                            <Link to="/" className="add-btn">Buy Now</Link>
+                                            <p>Download Cooking Book</p>
+                                            <a href="https://www.safefood.eu/SafeFood/media/SafeFoodLibrary/Documents/Healthy%20Eating/101_Square_Meals.pdf" target="_blank" className="add-btn">Download Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -422,7 +242,6 @@ class Single extends React.Component{
             </div>
             </div>
     </section>
-    {/* <!-- ****** Single Blog Area End ****** --> */}
 
         {/* start footer */}
           <Footer/>
@@ -431,4 +250,15 @@ class Single extends React.Component{
     )
   }
 }
-export default Single;
+
+const mapStateToProps = (state)=>{
+    return {
+        populatePost : state.populatePost,
+        postSingle : state.postSingle
+    }
+}
+
+const mapDispatchToProps = dispatch=>({
+    getPost : () => dispatch(PostSingleQuery())
+})
+export default connect(mapStateToProps,mapDispatchToProps)(Single);
