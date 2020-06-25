@@ -23,28 +23,28 @@ class Footer extends React.Component{
         <div className="social_icon_area clearfix">
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
+                    <div className="col-12 ">
                         <div className="footer-social-area d-flex">
                             <div className="single-icon">
-                                <Link to="/"><i className="fa fa-facebook" aria-hidden="true"></i><span>facebook</span></Link>
+                                <a href="https://www.facebook.com/" target="_blank"><i className="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
                             </div>
                             <div className="single-icon">
-                                <Link to="/"><i className="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></Link>
+                                <a href="https://twitter.com/" target="_blank"><i className="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
                             </div>
                             <div className="single-icon">
-                                <Link to="/"><i className="fa fa-google-plus" aria-hidden="true"></i><span>GOOGLE+</span></Link>
+                                <a href="http://gmail.com" target="_blank" ><i className="fa fa-google-plus" aria-hidden="true"></i><span>GOOGLE+</span></a>
                             </div>
                             <div className="single-icon">
-                                <Link to="/"><i className="fa fa-linkedin-square" aria-hidden="true"></i><span>linkedin</span></Link>
+                                <a href="https://www.linkedin.com/" target="_blank" ><i className="fa fa-linkedin-square" aria-hidden="true"></i><span>linkedin</span></a>
                             </div>
                             <div className="single-icon">
-                                <Link to="/"><i className="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></Link>
+                                <a href="https://www.instagram.com/" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
                             </div>
                             <div className="single-icon">
-                                <Link to="/"><i className="fa fa-vimeo" aria-hidden="true"></i><span>VIMEO</span></Link>
+                                <a href="https://vimeo.com/" target="_blank"><i className="fa fa-vimeo" aria-hidden="true"></i><span>VIMEO</span></a>
                             </div>
                             <div className="single-icon">
-                                <Link to="/"><i className="fa fa-youtube-play" aria-hidden="true"></i><span>YOUTUBE</span></Link>
+                                <a href="https://youtube.com" target="_blank" ><i className="fa fa-youtube-play" aria-hidden="true"></i><span>Youtube</span></a>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ class Footer extends React.Component{
         <footer className="footer_area">
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
+                    <div className="col-12 text-center">
                         <div className="footer-content">
                             {/* Logo Area Start */}
                             <div className="footer-logo-area text-center">
