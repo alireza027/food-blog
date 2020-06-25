@@ -4,7 +4,7 @@ class Header extends React.Component{
   constructor(){
     super();
     this.state = {
-        
+        searchText : ""
     }
   }
 
@@ -16,7 +16,16 @@ class Header extends React.Component{
       }
   }
 
+  handleChange = (e)=>{
+      this.setState({
+          searchText : e.target.value
+      })
+  }
 
+  handleClick = (e)=>{
+      e.preventDefault();
+      this.props.history.push(`/search/${this.state.searchText}`)
+  }
   render(){
     return(
       <>
@@ -30,15 +39,16 @@ class Header extends React.Component{
                           <a href="https://www.facebook.com/" target="_blank"><i className="fa fa-facebook" aria-hidden="true"></i></a>
                           <a href="https://twitter.com/" target="_blank"><i className="fa fa-twitter" aria-hidden="true"></i></a>
                           <a href="https://www.linkedin.com/" target="_blank"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
-                          <a href="https://www.skype.com/en/" target="_blank" ><i className="fa fa-skype" aria-hidden="true"></i></a>
+                          <a href="https://www.skype.com/en/" target="_blank"><i className="fa fa-skype" aria-hidden="true"></i></a>
                       </div>
                   </div>
                   {/* <!--  Login Register Area --> */}
                   <div className="col-7 col-sm-6">
                       <div className="signup-search-area d-flex align-items-center justify-content-end">
                           <div className="">
-                              <form action="/" method="get">
-                                  <input type="search" name="search" id="search-anything" placeholder="Search Anything..." className="form-control" style={{border:"none"}} autoComplete="off"/>
+                              <form style={{position:"relative"}}>
+                                  <input type="text" id="search-anything" placeholder="Search Anything..." className="form-control" style={{border:"none"}} autoComplete="off" onChange={(e)=>{this.handleChange(e)}}/>
+                                  <button onClick={e=>{this.handleClick(e)}} style={{border:"none",background:"transparent",display:"inline-block",width:"20px",height:"20px",position:"absolute",top:"8px",right:"20px"}}><i className="fa fa-search"></i></button>
                               </form>
                           </div>
                       </div>
@@ -60,7 +70,7 @@ class Header extends React.Component{
               </div>
 
               <div className="row">
-                  <div className="col-12">
+                  <div className="col-12 text-center">
                       <nav className="navbar navbar-expand-lg">
                           <button className="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i className="fa fa-bars" aria-hidden="true"></i> Menu</button>
                           {/* <!-- Menu Area Start --> */}
