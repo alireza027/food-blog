@@ -51,8 +51,8 @@ const Types = `
         created_post : String
         updated_post : String
         user : User
-        likes : Like
-        comments : Comment
+        likes : [Like]
+        comments : [Comment]
         tags : [String]
         type : String
     }

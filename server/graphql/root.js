@@ -23,13 +23,6 @@ module.exports.root = {
                 return result;
             }
         })
-        return Users.findOne({username:args.username,password:args.password}).populate('social').populate('comments').populate('likes').populate('posts').then(result=>{
-            var token = jwt.sign({id:result._id},process.env.SECRET_KEY,{expiresIn : "15 days"})
-            result.token = token;
-            return result;
-        }).catch(err=>{
-            return err;
-        })
     },
     UserToken : (args)=>{
         var jwwt = jwt.verify(args.token,process.env.SECRET_KEY);
@@ -119,7 +112,7 @@ module.exports.root = {
         })
     },
     Post : (args)=>{
-        return Posts.findById(args.id).populate('user').populate('likes').populate("comments").then((resultPost)=>{
+        return Posts.findById(args.id).populate('user').populate({path:"likes",populate: { path: 'user' }}).populate({path:"comments",populate: { path: 'user' }}).then((resultPost)=>{
             return resultPost;
         }).catch(err=>{
             return err;
@@ -348,7 +341,8 @@ module.exports.root = {
 
     // Other Schema
     AllPost : (args)=>{
-        return Posts.find({}).populate('user').populate('likes').populate('comments').then((resultAllPost)=>{
+        return Posts.find({}).populate('user').populate('likes').populate('comments').limit(9).sort({"_id":-1}).then((resultAllPost)=>{
+            console.log(resultAllPost.likes);
             return resultAllPost;
         })
     },
